@@ -1,6 +1,6 @@
 fun! TransmitFtpSendFile()
     let TransmitFtpFileName = expand("%:p")
-    let TransmitFtpAppleScript = split(&runtimepath, ",")[0] . "/plugged/transmit-ftp/apple/send_to_transmit.applescript"
+    let TransmitFtpAppleScript = $HOME . "/.vim/plugged/transmit-ftp/apple/send_to_transmit.applescript"
     silent exec '!osascript "' . TransmitFtpAppleScript . '" "' . TransmitFtpFileName . '"'
 	redraw!
 	echo "File " . TransmitFtpFileName . " sent to Transmit" 
